@@ -3,30 +3,30 @@
 #include <stdio.h>
 
 /**
- * main - Prints random number to variable
+ * main - Determines if a number is positive, negative or zero.
  *
- * Return: Always (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
 	int n;
-	char last[] = "last digit of";
+	char
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	printf("%s %d is %d and is ", last, n, n % 10);
-	if (n % 10 > 5)
+	if (n > 0)
 	{
-		printf("greater than 5\n");
+		printf("%d is positive\n", n);
 	}
-	else if (n % 10 == 0)
+	else if (n == 0)
 	{
-		printf("0\n");
+		printf("%d is zero\n", n);
 	}
 	else
 	{
-		printf("less than 6 and not 0\n", n);
+		printf("%d is negative\n", n);
 	}
 	return (0);
 }
+
 
