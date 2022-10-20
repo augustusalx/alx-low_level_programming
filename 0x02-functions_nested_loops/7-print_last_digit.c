@@ -2,7 +2,7 @@
 
 /**
  * print_last_digit - prints the last digit
- * @n: the number
+ * @n: the passed args
  * Return: value of the last digit
  */
 int print_last_digit(int n)
@@ -13,5 +13,5 @@ int print_last_digit(int n)
 		n = -n;
 	ld = n % 10;
 	_putchar(ld + '0');
-	return (n % 10);
+	return (ld);
 }
