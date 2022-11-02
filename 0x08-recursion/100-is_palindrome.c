@@ -1,26 +1,58 @@
 #include "main.h"
 
-int find_strlen(char *s);
-int check_palindrome(char *s, int len, int index);
+/**
+ * _strlen_recursion - returns the length of a string
+ * @s: the string
+ * Return: length of string
+ */
+int _strlen_recursion(char *s)
+{
+	int len = 0;
 
-int is_palindrome(char *s);
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	if (*s != '\0')
+	{
+		len++;
+		len += _strlen_recursion(++s);
+		return (len);
+	}
+	return (0);
+}
 
 /**
- * find_strlen - Returns the length of a string
- * @s: The string to be measured
- *
- * Return: The length of the string
+ * _compareends - checks matches either end of a str
+ * @s: string
+ * @begin: start
+ * @end: the end
+ * Return: 0 or 1
  */
-int find_strlen(char *s)
+int _compareends(char *s, int begin, int end)
 {
-	int l = 0;
+	if (begin >= end)
+		return (1);
+	if (s[begin] == s[end])
+		return (_compareends(s, (begin + 1), (end - 1)));
+	if (s[begin] == s[end] && begin == end)
+		return (1);
+	return (0);
+}
 
-	if (*(s + l))
-	{
-		l++;
-		l += find_strlen(s + l);
-	}
+/**
+ * is_palindrome - checking for palindrome
+ * @s: the string
+ * Return: 1 if true, 0 if not
+ */
+int is_palindrome(char *s)
+{
+	int len;
 
-	return (l);
+	len = _strlen_recursion(s);
+	if (len == 0 || len == 1)
+		return (1);
+	else
+		return (_compareends(s, 0, len - 1));
 }
 
