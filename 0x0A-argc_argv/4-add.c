@@ -43,7 +43,8 @@ int main(int argc, char *argv[])
 	ct = 1;
 	while (ct < argc) /*Goes through the whole array*/
 	{
-		if (check_num(argv[ct]))
+		if
+			(check_num(argv[ct]))
 		{
 	str_to_int = atoi(argv[ct]); /*ATOI --> convert string to int*/
 	sm += str_to_int;
