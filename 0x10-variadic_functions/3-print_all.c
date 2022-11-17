@@ -64,7 +64,7 @@ void print_string(va_list arg)
 }
 
 /**
- * print_all - Prints anything, followed by a new line 
+ * print_all - Prints anything, followed by a new line
  * @format: String of characters representing the argument types
  * @...: A variable number of arguments to be printed
  * Description: Arguements of char, int, float and char* are allowed
@@ -80,7 +80,7 @@ void print_all(const char * const format, ...)
 		{"f", print_float},
 		{"s", print_string}
 	};
-	
+
 	va_start(args, format);
 
 	while (format && (*(format + i)))
