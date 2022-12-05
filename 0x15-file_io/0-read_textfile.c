@@ -4,7 +4,8 @@
  * read_textfile - reads a text file and prints the letters
  * @filename: filename.
  * @letters: numbers of letters printed.
- * Return: numbers of letters printed, or 0 if it fails
+ *
+ * Return: numbers of letters printed. It fails, returns 0.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -27,7 +28,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	nrd = read(fdd, buf, letters);
 	nwr = write(STDOUT_FILENO, buf, nrd);
 
-	close(fd);
+	close(fdd);
 
 	free(buf);
 
